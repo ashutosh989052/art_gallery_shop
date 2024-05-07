@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-name {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-bottom: 30px;
+}
+
+.form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.btn-register {
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.btn-register:hover {
+    background-color: #005555;
+}
+
+.navigation {
+    text-align: center;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    color: #ff0000;
+}
+.message.success-message {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,107 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
+}
+
+.nav-links {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    animation: slide-in-bottom 0.5s ease-out;
+}
+
+.button:hover {
+    background-color: #d35400;
+}
+
+/* Quote Section Styles */
+.quote-section {
+    margin-top: 50px;
+}
+
+.quote {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    animation: fade-in 1s ease-out;
+}
+
+.quote-content {
+    padding: 20px;
+    opacity: 0; 
+    animation: fade-in-quote 1s ease-out forwards; /* Fade in animation */
+}
+
+.quote-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.quote-content p {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Animations */
+@keyframes slide-in-bottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-quote {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
