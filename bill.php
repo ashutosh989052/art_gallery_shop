@@ -2,7 +2,6 @@
 session_start();
 require_once('db_connection.php');
 
-//test tag
 // Include PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
