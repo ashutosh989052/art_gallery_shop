@@ -5,6 +5,17 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5; 
 }
+.slider-section {
+    margin-top: 50px;
+}
+.slider {
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.slick-slide img {
+    width: 100%;
+    height: auto;
+}
 
 .container {
     max-width: 1200px;
