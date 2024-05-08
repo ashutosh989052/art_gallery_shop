@@ -55,6 +55,11 @@
     </main>
 
     <script src="js/script.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
