@@ -337,6 +337,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <footer class="footer">
         <div class="container">
             <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
+            <p>&copy; <?php echo date('Y'); ?> kanchan</p>
         </div>
     </footer>
 </body>
