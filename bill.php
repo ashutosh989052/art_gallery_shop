@@ -219,50 +219,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/bill_style.css">
     <script>
-        function getCityName() {
-            var pincode = document.getElementById("pincode").value;
-            var citySelect = document.getElementById("area");
-            var districtInput = document.getElementById("district");
+    function getCityName() {
+        var pincode = document.getElementById("pincode").value;
+        var citySelect = document.getElementById("area");
+        var districtInput = document.getElementById("district");
 
-            citySelect.innerHTML = '<option value="">Select City/Area</option>';
-            districtInput.value = '';
+        citySelect.innerHTML = '<option value="">Select City/Area</option>';
+        districtInput.value = '';
 
-            fetch('https://api.postalpincode.in/pincode/' + pincode)
-                .then(response => response.json())
-                .then(data => {
-                    if (data[0]['Status'] === 'Success') {
-                        var postOffices = data[0]['PostOffice'];
-                        postOffices.forEach(function (postOffice) {
-                            var cityName = postOffice['Name'];
-                            var option = document.createElement('option');
-                            option.value = cityName;
-                            option.textContent = cityName;
-                            citySelect.appendChild(option);
-                        });
-
-                        districtInput.value = data[0]['PostOffice'][0]['District'];
-                    } else {
+        fetch('https://api.postalpincode.in/pincode/' + pincode)
+            .then(response => response.json())
+            .then(data => {
+                if (data[0]['Status'] === 'Success') {
+                    var postOffices = data[0]['PostOffice'];
+                    postOffices.forEach(function(postOffice) {
+                        var cityName = postOffice['Name'];
                         var option = document.createElement('option');
-                        option.value = 'City/Area not found';
-                        option.textContent = 'City/Area not found';
+                        option.value = cityName;
+                        option.textContent = cityName;
                         citySelect.appendChild(option);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
+                    });
+
+                    districtInput.value = data[0]['PostOffice'][0]['District'];
+                } else {
                     var option = document.createElement('option');
                     option.value = 'City/Area not found';
                     option.textContent = 'City/Area not found';
                     citySelect.appendChild(option);
-                });
-        }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                var option = document.createElement('option');
+                option.value = 'City/Area not found';
+                option.textContent = 'City/Area not found';
+                citySelect.appendChild(option);
+            });
+    }
     </script>
 </head>
 
 <body>
     <div class="container">
         <div class="welcome-section">
-            <p class="welcome-message">Hello, <span id="username"><?php echo $username; ?></span>! <i class="fas fa-smile"></i></p>
+            <p class="welcome-message">Hello, <span id="username"><?php echo $username; ?></span>! <i
+                    class="fas fa-smile"></i></p>
             <a href="logout.php" class="logout-btn">Logout <i class="fas fa-sign-out-alt"></i></a>
         </div>
         <div class="container">
@@ -278,12 +279,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Total</th>
                     </tr>
                     <?php foreach ($cart as $item): ?>
-                        <tr>
-                            <td><?php echo $item['name']; ?></td>
-                            <td><?php echo $item['quantity']; ?></td>
-                            <td>$<?php echo $item['price']; ?></td>
-                            <td>$<?php echo $item['quantity'] * $item['price']; ?></td>
-                        </tr>
+                    <tr>
+                        <td><?php echo $item['name']; ?></td>
+                        <td><?php echo $item['quantity']; ?></td>
+                        <td>$<?php echo $item['price']; ?></td>
+                        <td>$<?php echo $item['quantity'] * $item['price']; ?></td>
+                    </tr>
                     <?php endforeach; ?>
                     <tr class='total-row'>
                         <td colspan='3'>Total Amount</td>
@@ -306,7 +307,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="input-group">
                         <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile Number</label>
-                        <input type="text" id="mobile" name="mobile" onchange="getCityName()" required pattern="^(?!.*(\d)\1{9})((?!1234567890|0987654321)\d{10})$">
+                        <input type="text" id="mobile" name="mobile" onchange="getCityName()" required
+                            pattern="^(?!.*(\d)\1{9})((?!1234567890|0987654321)\d{10})$">
                     </div>
                     <div class="input-group">
                         <label for="address"><i class="fas fa-map-marker-alt"></i> Delivery Address</label>
@@ -318,7 +320,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="input-group">
                         <label for="district"><i class="fas fa-city"></i> District</label>
-                        <input type="text" id="district" name="district" readonly> 
+                        <input type="text" id="district" name="district" readonly>
                     </div>
                     <div class="input-group">
                         <label for="area"><i class="fas fa-building"></i> City/Area</label>

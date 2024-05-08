@@ -23,6 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,12 +31,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/login_style.css">
     <style>
-        body {
-            background-image: url('images/bg8.png');
-            background-size: cover;
-        }
+    body {
+        background-image: url('images/bg8.png');
+        background-size: cover;
+    }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1><i class="fas fa-palette"></i> Art Gallery Shop</h1>
@@ -64,9 +66,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
     </div>
     <footer class="footer">
-    <div class="container">
-        <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
-    </div>
-</footer>
+        <div class="container">
+            <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

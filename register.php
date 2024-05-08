@@ -66,10 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/register_style.css">
     <style>
-        body {
-            background-image: url('images/bg8.png');
-            background-size: cover;
-        }
+    body {
+        background-image: url('images/bg8.png');
+        background-size: cover;
+    }
     </style>
 </head>
 
@@ -118,73 +118,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </footer>
 
     <script>
-        async function validateForm() {
-            const name = document.getElementById("user").value;
-            const contact = document.getElementById("contact").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("pass").value;
-            const namePattern = /^[a-zA-Z\s]+$/; // Only letters and spaces
-            const contactPattern = /^(?!.*(\d)\1{9})((?!1234567890|0987654321)\d{10})$/; // Indian mobile number pattern
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email pattern
-            const passwordPattern =
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{6,10}$/; // Password pattern
+    async function validateForm() {
+        const name = document.getElementById("user").value;
+        const contact = document.getElementById("contact").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("pass").value;
+        const namePattern = /^[a-zA-Z\s]+$/; // Only letters and spaces
+        const contactPattern = /^(?!.*(\d)\1{9})((?!1234567890|0987654321)\d{10})$/; // Indian mobile number pattern
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email pattern
+        const passwordPattern =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{6,10}$/; // Password pattern
 
-            let errorMessage = '';
+        let errorMessage = '';
 
-            if (!namePattern.test(name)) {
-                errorMessage += "Full name can only contain letters and spaces.\n";
-            }
-
-            if (!contactPattern.test(contact)) {
-                errorMessage += "Please enter a valid mobile number.\n";
-            }
-
-            if (!emailPattern.test(email)) {
-                errorMessage += "Please enter a valid email address.\n";
-            }
-
-            if (!passwordPattern.test(password)) {
-                errorMessage +=
-                    "Password must be 6-10 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.\n";
-            }
-
-            if (errorMessage) {
-                document.getElementById("message").innerText = errorMessage;
-                return false;
-            } else {
-                return true;
-            }
+        if (!namePattern.test(name)) {
+            errorMessage += "Full name can only contain letters and spaces.\n";
         }
 
+        if (!contactPattern.test(contact)) {
+            errorMessage += "Please enter a valid mobile number.\n";
+        }
 
-        async function submitForm(event) {
-            event.preventDefault(); // Prevent default form submission
+        if (!emailPattern.test(email)) {
+            errorMessage += "Please enter a valid email address.\n";
+        }
 
-            const isValid = await validateForm(); // Validate the form
-            if (isValid) {
-                const form = event.target;
-                const formData = new FormData(form);
+        if (!passwordPattern.test(password)) {
+            errorMessage +=
+                "Password must be 6-10 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.\n";
+        }
 
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: formData
-                    });
+        if (errorMessage) {
+            document.getElementById("message").innerText = errorMessage;
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-                    if (response.ok) {
-                        const data = await response.json();
-                        document.getElementById("message").innerText = data.message;
-                    } else {
-                        document.getElementById("message").innerText = "Registration failed. Please try again.";
-                    }
-                } catch (error) {
-                    console.error('Error submitting form:', error);
-                    document.getElementById("message").innerText = "An error occurred. Please try again.";
+
+    async function submitForm(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const isValid = await validateForm(); // Validate the form
+        if (isValid) {
+            const form = event.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById("message").innerText = data.message;
+                } else {
+                    document.getElementById("message").innerText = "Registration failed. Please try again.";
                 }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                document.getElementById("message").innerText = "An error occurred. Please try again.";
             }
         }
+    }
 
-        document.querySelector('.registration-form').addEventListener('submit', submitForm);
+    document.querySelector('.registration-form').addEventListener('submit', submitForm);
     </script>
 
 </body>
