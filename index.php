@@ -9,12 +9,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <link rel="stylesheet" href="style/index_style.css">
-    <style>
-    body {
-        background-image: url('images/bg11.jpg');
-        background-size: cover;
-    }
-    </style>
 </head>
 
 <body>
@@ -30,16 +24,6 @@
     </header>
 
     <main>
-        <section class="slider-section">
-            <div class="container">
-                <div class="slider">
-                    <div><img src="images/img1.jpg" alt="Slide 1"></div>
-                    <div><img src="images/img2.jpg" alt="Slide 2"></div>
-                    <div><img src="images/img3.jpg" alt="Slide 3"></div>
-                </div>
-            </div>
-        </section>
-
         <section class="quote-section">
             <div class="container">
                 <div class="quote">

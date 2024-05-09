@@ -65,12 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Registration - Art Gallery Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/register_style.css">
-    <style>
-    body {
-        background-image: url('images/bg8.png');
-        background-size: cover;
-    }
-    </style>
+
 </head>
 
 <body>
@@ -101,6 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <button type="submit" class="btn-register"><i class="fas fa-user-plus"></i> Register</button>
+                <div class="loader" id="loader"></div>
             </form>
         </div>
 
@@ -112,9 +108,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="message" id="message"></div>
     </div>
     <footer class="footer">
-        <div class="container">
+   
             <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
-        </div>
+ 
     </footer>
 
     <script>
@@ -156,12 +152,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-
     async function submitForm(event) {
         event.preventDefault(); // Prevent default form submission
 
         const isValid = await validateForm(); // Validate the form
         if (isValid) {
+            document.getElementById("loader").style.display = "block"; // Show loader
             const form = event.target;
             const formData = new FormData(form);
 
@@ -180,6 +176,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } catch (error) {
                 console.error('Error submitting form:', error);
                 document.getElementById("message").innerText = "An error occurred. Please try again.";
+            } finally {
+                document.getElementById("loader").style.display = "none"; // Hide loader
             }
         }
     }

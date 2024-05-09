@@ -1,136 +1,88 @@
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('images/bg7.jpg');
+    background-color: #e6e6e6;
     background-size: cover;
-    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
-    margin: 100px auto;
-    padding: 30px;
-    background-color: #F7F2FF;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: slide-in 0.5s ease-out;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    width: 100%;
+    text-align: center;
+    animation: fadein 1s;
 }
 
-@keyframes slide-in {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 20px;
-    animation: fade-in 0.5s ease-out;
-}
-
-@keyframes fade-in {
+@keyframes fadein {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
-.login-form {
-    margin-bottom: 20px;
+.container h1 {
+    margin-top: 0;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-    animation: slide-in-left 0.5s ease-out;
-}
-
-@keyframes slide-in-left {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    display: inline-block;
+    width: 100px;
+    text-align: left;
 }
 
 input[type="email"],
 input[type="password"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    animation: slide-in-right 0.5s ease-out;
+    width: calc(100% - 120px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+/* Add this CSS to your existing CSS file or style block */
+::placeholder {
+    color: #ccc; /* Light gray color for placeholder text */
 }
 
-@keyframes slide-in-right {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+input[type="email"]::placeholder:before,
+input[type="password"]::placeholder:before {
+    font-family: "Font Awesome 5 Free";
+    content: attr(placeholder);
+    color: #555; /* Dark gray color for icon */
+    margin-right: 5px;
 }
+
 
 .btn-login {
-    position: relative;
-    background-color: #007bff;
-    color: #fff;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 4px;
-    padding: 12px 40px 12px 40px; /* Adjust the padding to accommodate the icon */
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    animation: slide-in-bottom 0.5s ease-out;
-    margin-top: 20px; 
+    transition: background-color 0.3s;
 }
-
-.btn-login i {
-    position: absolute;
-    left: 10px; /* Adjust the position of the icon */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Add this if you want to style the icon */
-.btn-login i {
-    color: white; /* Change the color of the icon */
-}
-
 
 .btn-login:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
-@keyframes slide-in-bottom {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.error-message {
+    color: red;
+    margin-top: 10px;
 }
 
 .navigation {
@@ -138,22 +90,26 @@ input[type="password"] {
 }
 
 .btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     margin-right: 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     text-decoration: none;
-    animation: slide-in-right 0.5s ease-out;
 }
 
 .btn:hover {
-    background-color: #555;
+    background-color: #005f6b;
 }
 
-.error-message {
-    color: red;
-    margin-top: 10px;
-    animation: fade-in 0.5s ease-out;
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+    text-align: center;
 }

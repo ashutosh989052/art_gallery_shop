@@ -30,12 +30,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login - Art Gallery Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/login_style.css">
-    <style>
-    body {
-        background-image: url('images/bg8.png');
-        background-size: cover;
-    }
-    </style>
 </head>
 
 <body>
@@ -44,12 +38,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
         <form action="" method="POST" class="login-form">
             <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="&#xf0e0; Email" required>
             </div>
             <div class="form-group">
-                <label for="password"><i class="fas fa-lock"></i> Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="&#xf023; Password" required>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</button>
@@ -66,9 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
     </div>
     <footer class="footer">
-        <div class="container">
-            <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
-        </div>
+        <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
 
