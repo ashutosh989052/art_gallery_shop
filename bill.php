@@ -75,8 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $orderDetailsJson = json_encode($orderDetails);
         $totalAmount = $subtotal;
 
-        $sql = "INSERT INTO orders (name, email, mobile, address, area, district, pincode, order_details, total_amount, selected_post_office) 
-                VALUES ('$name', '$email', '$mobile', '$address', '$area', '$district', '$pincode', '$orderDetailsJson', '$totalAmount', '$selectedPostOffice')";
+        $sql = "INSERT INTO orders (name, email, mobile, address, area, district, pincode, order_details, total_amount) 
+        VALUES ('$name', '$email', '$mobile', '$address', '$selectedPostOffice', '$district', '$pincode', '$orderDetailsJson', '$totalAmount')";
+
         if ($connection->query($sql) === TRUE) {
             // Sending email
             $mail = new PHPMailer(true);
@@ -186,9 +187,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p><b>Email:</b> $email</p>
                             <p><b>Mobile:</b> $mobile</p>
                             <p><b>Address:</b> $address</p>
-                            <p><b>Area:</b> $area $pincode</p>
+                            <p><b>Area:</b> $selectedPostOffice $pincode</p>
                             <p><b>District:</b> $district</p>
-                            <p><b>Selected Post Office:</b> $selectedPostOffice</p>
                         </div>
                     </div>
                     <div class='footer'>
