@@ -59,6 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $district = $cityAndDistrict['district'];
         $address = $_POST['address'];
 
+        // Add the selected post office to the order details
+        $selectedPostOffice = $_POST['area']; // Assuming your select element's name is 'area'
+
         $orderDetails = [];
         foreach ($cart as $item) {
             $orderDetails[] = [
@@ -72,8 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $orderDetailsJson = json_encode($orderDetails);
         $totalAmount = $subtotal;
 
-        $sql = "INSERT INTO orders (name, email, mobile, address, area, district, pincode, order_details, total_amount) 
-                VALUES ('$name', '$email', '$mobile', '$address', '$area', '$district', '$pincode', '$orderDetailsJson', '$totalAmount')";
+        $sql = "INSERT INTO orders (name, email, mobile, address, area, district, pincode, order_details, total_amount, selected_post_office) 
+                VALUES ('$name', '$email', '$mobile', '$address', '$area', '$district', '$pincode', '$orderDetailsJson', '$totalAmount', '$selectedPostOffice')";
         if ($connection->query($sql) === TRUE) {
             // Sending email
             $mail = new PHPMailer(true);
@@ -185,6 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p><b>Address:</b> $address</p>
                             <p><b>Area:</b> $area $pincode</p>
                             <p><b>District:</b> $district</p>
+                            <p><b>Selected Post Office:</b> $selectedPostOffice</p>
                         </div>
                     </div>
                     <div class='footer'>
@@ -208,6 +212,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<!-- Rest of your HTML code remains unchanged -->
+
 <!DOCTYPE html>
 <html lang="en">
 
