@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2; /* Light textured background */
@@ -22,6 +23,7 @@ body {
     margin: 0;
 }
 
+/* Welcome section */
 .welcome-section {
     margin-top: 20px;
     display: flex;
@@ -70,6 +72,7 @@ body {
     font-weight: bold;
 }
 
+/* Bill section */
 .bill-section {
     padding: 20px;
 }
@@ -184,4 +187,79 @@ body {
 
 .footer p {
     margin: 0;
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 30px auto;
+        padding: 10px;
+    }
+
+    .project-name {
+        font-size: 24px;
+    }
+
+    .welcome-message {
+        font-size: 16px;
+    }
+
+    .cart-btn,
+    .logout-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .bill-section h2 {
+        font-size: 20px;
+    }
+
+    .input-group label {
+        font-size: 14px;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 5px;
+    }
+
+    .project-name {
+        font-size: 20px;
+    }
+
+    .welcome-message {
+        font-size: 14px;
+    }
+
+    .bill-section h2 {
+        font-size: 18px;
+    }
+
+    .input-group label {
+        font-size: 12px;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select {
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
 }
