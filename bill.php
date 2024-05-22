@@ -223,7 +223,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Art Gallery Shop - Bill</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style/bill_style.css">
+    <link rel="stylesheet" href="style2/bill_style.css">
     <script>
     function getCityName() {
         var pincode = document.getElementById("pincode").value;
@@ -270,7 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="welcome-section">
             <p class="welcome-message">Hello, <span id="username"><?php echo $username; ?></span>! <i
                     class="fas fa-smile"></i></p>
-            <a href="logout.php" class="logout-btn">Logout <i class="fas fa-sign-out-alt"></i></a>
+            <a href="logout.php" class="logout-btn">Logout &nbsp;<i class="fas fa-sign-out-alt"></i></a>
         </div>
         <div class="container">
             <h1 class="project-name"><i class="fas fa-palette"></i> Art Gallery Shop</h1>
@@ -336,7 +336,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </select>
                         </div>
                     </div>
-                    <input type="submit" value="Confirm Order" class="btn"><i class="fas fa-check"></i>
+                    <button type="submit" class="btn">
+    Confirm Order <i class="fas fa-check"></i>
+</button>
+
                     <a href="cart.php" class="btn"><i class="fas fa-shopping-cart"></i> Cart</a>
                 </form>
             </div>

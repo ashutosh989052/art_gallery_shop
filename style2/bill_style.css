@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light textured background */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-name {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+.welcome-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc; /* Subtle border at the bottom */
+    padding-bottom: 10px; /* Add some padding at the bottom */
+}
+
+.welcome-message {
+    margin-right: auto;
+    font-size: 18px;
+    color: #555;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn,
+.logout-btn {
+    padding: 8px 16px; /* Smaller padding */
+    background-color: #ff6f61; /* Reddish color for buttons */
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn:hover,
+.logout-btn:hover {
+    background-color: #e55d4f; /* Darker shade on hover */
+}
+
+.cart-btn i,
+.logout-btn i {
+    margin-right: 5px;
+}
+
+#username {
+    font-weight: bold;
+}
+
+.bill-section {
+    padding: 20px;
+}
+
+.bill-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#order-summary {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden; /* Ensure rounded corners are displayed properly */
+}
+
+#order-summary th,
+#order-summary td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#order-summary th {
+    background-color: #f2f2f2;
+}
+
+#order-summary tr:hover {
+    background-color: #f5f5f5;
+}
+
+.total-row {
+    background-color: #f2f2f2;
+}
+
+.total-row td {
+    border-top: 2px solid #000;
+}
+
+.total p {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.bill-form {
+    margin-top: 20px;
+}
+
+.bill-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    background-color: #333;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+}
