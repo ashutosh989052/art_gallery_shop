@@ -1,0 +1,230 @@
+/* order_history_style.css */
+
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Container styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInDown 0.5s ease;
+}
+
+/* Project name styles */
+.project-name {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    animation: fadeIn 1s ease;
+}
+
+/* Welcome section styles */
+.welcome-section {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Welcome message styles */
+.welcome-message {
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+/* Action buttons styles */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons .cart-btn,
+.action-buttons .logout-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.action-buttons .cart-btn:hover,
+.action-buttons .logout-btn:hover {
+    background-color: #34495e;
+}
+
+/* Order history container styles */
+.order-history {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Order container styles */
+.order-container {
+    width: 90%; /* Set width to match the main container */
+    max-width: 1200px; /* Limit width to prevent overflow */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    animation: fadeInDown 0.5s ease;
+}
+
+/* Order details styles */
+.order-details {
+    margin-top: 20px;
+}
+
+.order-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-details th,
+.order-details td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.order-details th {
+    background-color: #f2f2f2;
+}
+
+/* PDF button styles */
+.pdf-btn-container {
+    margin-top: 20px;
+}
+
+.pdf-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pdf-btn:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+
+.order-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-details th,
+.order-details td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.order-details th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.order-details tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /
+}
+
+.order-details tbody tr:hover {
+    background-color: #f2f2f2; 
+}
+
+.order-container:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.footer {
+    text-align: center;
+    color: #555;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 20px;
+    }
+
+    .order-details th,
+    .order-details td {
+        padding: 8px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}

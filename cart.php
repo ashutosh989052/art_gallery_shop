@@ -69,7 +69,7 @@ if (isset($_POST['add_to_cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery Shop - Shopping Cart</title>
-    <link rel="stylesheet" href="style/cart_style.css">
+    <link rel="stylesheet" href="style2/cart_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -141,6 +141,27 @@ if (isset($_POST['add_to_cart'])) {
         });
     });
     calculateTotal();
+
+    // In your JavaScript file or within <script> tags in your HTML file
+
+document.addEventListener("DOMContentLoaded", function() {
+    const products = document.querySelectorAll(".product");
+
+    window.addEventListener("scroll", function() {
+        products.forEach(function(product) {
+            const productTop = product.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            // Check if the product is within the viewport
+            if (productTop < windowHeight) {
+                product.classList.add("product-scroll-animation"); // Apply scrolling animation class
+            } else {
+                product.classList.remove("product-scroll-animation"); // Remove scrolling animation class
+            }
+        });
+    });
+});
+
     </script>
 
 </body>
