@@ -47,13 +47,13 @@ if ($result && mysqli_num_rows($result) > 0) {
 <body>
 
     <div class="container">
-        <h1 class="project-name">Art Gallery Shop</h1>
+        <h1 class="project-name"><i class="fas fa-palette"></i>Art Gallery Shop</h1>
         <div class="welcome-section">
             <strong>
                 <p class="welcome-message">Welcome, <?php echo $username; ?>!</p>
             </strong>
             <div class="action-buttons">
-                <a href="cart.php" class="cart-btn"><i class="fas fa-order-cart"></i> Go to Cart</a>
+                <a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Cart</a>
                 <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>

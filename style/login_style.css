@@ -52,9 +52,9 @@ input[type="password"] {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-/* Add this CSS to your existing CSS file or style block */
+
 ::placeholder {
-    color: #ccc; /* Light gray color for placeholder text */
+    color: #000000; /* Light gray color for placeholder text */
 }
 
 input[type="email"]::placeholder:before,
