@@ -14,6 +14,7 @@ body {
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.8s ease-in-out;
 }
 
 .project-name {
@@ -187,6 +188,15 @@ body {
 
 .footer p {
     margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Media queries for different screen sizes */
