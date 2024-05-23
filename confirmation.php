@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation Page - Art Gallery Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style/confirmation_style.css">
+    <link rel="stylesheet" href="style2/confirmation_style.css">
 </head>
 
 <body>
@@ -30,7 +30,6 @@
 // Start the session
 session_start();
 
-// Destroy the session after 5 seconds
 echo "<script>
     setTimeout(function() {
         window.location.href = 'index.php'; // Redirect to index.php
@@ -39,8 +38,6 @@ echo "<script>
     setTimeout(function() {
         window.location.href = 'index.php'; // Redirect to index.php
         <?php
-            // Unset all session variables
-            // Destroy the session
             session_destroy();
         ?>
     }, 5000); // 5000 milliseconds = 5 seconds

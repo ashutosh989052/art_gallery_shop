@@ -1,0 +1,137 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light textured background */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s;
+    flex: 1 0 auto; /* Allow the container to grow, but not force it to fill the space */
+}
+
+.project-name {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s;
+}
+
+.project-name i {
+    margin-right: 10px;
+    color: #ff6f61;
+}
+
+.confirmation-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+    animation: fadeIn 1.5s;
+}
+
+.confirmation-message p {
+    margin: 10px 0;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    margin: 10px 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    animation: fadeIn 2s;
+}
+
+.download-link i {
+    margin-right: 5px;
+}
+
+.download-link:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: #333;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    flex-shrink: 0;
+    animation: fadeIn 2.5s;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 30px auto;
+        padding: 10px;
+    }
+
+    .project-name {
+        font-size: 24px;
+    }
+
+    .confirmation-message {
+        font-size: 16px;
+    }
+
+    .download-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 5px;
+    }
+
+    .project-name {
+        font-size: 20px;
+    }
+
+    .confirmation-message {
+        font-size: 14px;
+    }
+
+    .download-link {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
