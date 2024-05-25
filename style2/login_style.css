@@ -24,6 +24,21 @@ body {
     animation: fadeInDown 0.5s ease; /* Apply fadeInDown animation */
 }
 
+/* Custom styles for the reCAPTCHA box */
+.custom-recaptcha {
+    display: inline-block;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-recaptcha .g-recaptcha {
+    transform: scale(0.9);
+    transform-origin: 0 0;
+}
+
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
