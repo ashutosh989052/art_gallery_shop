@@ -24,19 +24,19 @@ body {
     animation: fadeInDown 0.5s ease; /* Apply fadeInDown animation */
 }
 
-/* Custom styles for the reCAPTCHA box */
+
 .custom-recaptcha {
     display: inline-block;
     background: #f9f9f9;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.8); /* Scaling down to 80% */
+    transform-origin: 0 0;
+    width: 304px; /* reCAPTCHA's original width */
+    height: 78px; /* reCAPTCHA's original height */
 }
 
-.custom-recaptcha .g-recaptcha {
-    transform: scale(0.9);
-    transform-origin: 0 0;
-}
 
 
 @keyframes fadeInDown {

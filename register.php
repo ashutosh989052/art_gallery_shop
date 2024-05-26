@@ -15,12 +15,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact = mysqli_real_escape_string($connection, $_POST["contact"]);
     $email = mysqli_real_escape_string($connection, $_POST["email"]);
     $password = mysqli_real_escape_string($connection, $_POST["pass"]);
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
 
     // Regular expression pattern for mobile number validation
     $contactPattern = '/^(0|91)?[6-9][0-9]{9}$/';
 
     if (!preg_match($contactPattern, $contact)) {
         jsonResponse("Error: Please enter a valid mobile number.");
+    }
+
+    // Verify the reCAPTCHA response
+    $secretKey = '6Lf7-ecpAAAAAL2m67Fh7KG0sFtRHZgBACVjjIKb';
+    $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse");
+    $responseData = json_decode($verifyResponse);
+
+    if (!$responseData->success) {
+        jsonResponse("reCAPTCHA verification failed. Please try again.");
     }
 
     // Check if contact number already exists
@@ -52,9 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         jsonResponse("Invalid password. Password must be 6-10 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
     }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Registration - Art Gallery Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style2/register_style.css">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -95,6 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span id="pass-error" class="error"></span>
                 </div>
 
+                <div class="g-recaptcha" data-sitekey="6Lf7-ecpAAAAAPbd8obDKCO_dBM_qugV6kGOgVz4"></div> <!-- reCAPTCHA widget -->
+
                 <button type="submit" class="btn-register"><i class="fas fa-user-plus"></i> Register</button>
                 <div class="loader" id="loader"></div>
             </form>
@@ -108,9 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="message" id="message"></div>
     </div>
     <footer class="footer">
-   
-            <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
- 
+        <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
     </footer>
 
     <script>
