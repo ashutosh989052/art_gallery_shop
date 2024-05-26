@@ -1,0 +1,193 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light textured background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin: 0 0 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+    flex-grow: 1;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+#edit-order-form {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.4s ease-in-out;
+    display: none;
+}
+
+#edit-order-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#edit-order-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-order-form form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    align-self: flex-start;
+}
+
+#edit-order-form form button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* Hover Effects */
+button.delete-btn, button.edit-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button.delete-btn {
+    background-color: #ff6f61;
+    color: white;
+}
+
+button.delete-btn:hover {
+    background-color: #e55d4f;
+    transform: translateY(-3px);
+}
+
+button.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.edit-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 30px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    #edit-order-form h2 {
+        font-size: 20px;
+    }
+
+    #edit-order-form form button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    #edit-order-form h2 {
+        font-size: 18px;
+    }
+
+    #edit-order-form form button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+}
