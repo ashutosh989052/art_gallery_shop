@@ -99,8 +99,8 @@ if ($result->num_rows > 0) {
         $pdf->SetX($tableCenterX); // Set X position to center
         $pdf->Cell(50, 8, $item['item_name'], 1, 0, 'C');
         $pdf->Cell(30, 8, $item['quantity'], 1, 0, 'C');
-        $pdf->Cell(40, 8, '$' . number_format($item['price'], 2), 1, 0, 'C');
-        $pdf->Cell(40, 8, '$' . number_format($item['total'], 2), 1, 1, 'C');
+        $pdf->Cell(40, 8, '₹' . number_format($item['price'], 2), 1, 0, 'C');
+        $pdf->Cell(40, 8, '₹' . number_format($item['total'], 2), 1, 1, 'C');
     }
     $pdf->Ln(5); // Add some space
 
@@ -117,7 +117,7 @@ if ($result->num_rows > 0) {
     $pdf->SetFont('helvetica', 'B', 10);
     $pdf->SetX($totalAmountX); // Center align the cell
     $pdf->Cell(120, 8, 'Total Amount', 1, 0, 'C', 1);
-    $pdf->Cell(40, 8, '$' . number_format($totalAmount, 2), 1, 1, 'C');
+    $pdf->Cell(40, 8, '₹' . number_format($totalAmount, 2), 1, 1, 'C');
     $pdf->Ln(5); // Add some space
     
     

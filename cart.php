@@ -95,7 +95,7 @@ if (isset($_POST['add_to_cart'])) {
         <div class="product">
             <img src="images/<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
             <h3><?php echo $product['name']; ?></h3>
-            <p class="price">$<?php echo $product['price']; ?></p>
+            <p class="price">₹<?php echo $product['price']; ?></p>
             <form method="post">
                 <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
                 <input type="number" name="quantity" min="1" value="1">
@@ -107,7 +107,7 @@ if (isset($_POST['add_to_cart'])) {
     </div>
 
     <div class="total-section">
-        <p class="total-text">Total: <span id="total-amount">$0.00</span></p>
+        <p class="total-text">Total: <span id="total-amount">₹0.00</span></p>
     </div>
 
     <div class="navigation">
@@ -131,7 +131,7 @@ if (isset($_POST['add_to_cart'])) {
         <?php foreach ($_SESSION['cart'] as $item): ?>
         total += <?php echo $item['quantity'] * $item['price']; ?>;
         <?php endforeach; ?>
-        document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
+        document.getElementById('total-amount').textContent = '₹' + total.toFixed(2);
     }
 
     // Event listener to update total amount when quantity changes for each product

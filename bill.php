@@ -288,19 +288,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <tr>
                         <td><?php echo $item['name']; ?></td>
                         <td><?php echo $item['quantity']; ?></td>
-                        <td>$<?php echo $item['price']; ?></td>
-                        <td>$<?php echo $item['quantity'] * $item['price']; ?></td>
+                        <td>₹<?php echo $item['price']; ?></td>
+                        <td>₹<?php echo $item['quantity'] * $item['price']; ?></td>
                     </tr>
                     <?php endforeach; ?>
                     <tr class='total-row'>
                         <td colspan='3'>Total Amount</td>
-                        <td>$<?php echo $subtotal; ?></td>
+                        <td>₹<?php echo $subtotal; ?></td>
                     </tr>
                 </table>
 
-                <div class="total">
-                    <p>Total Amount: <span id="total-amount">$<?php echo number_format($subtotal, 2); ?></span></p>
-                </div>
+            <!--    <div class="total">
+                    <p>Total Amount: <span id="total-amount">₹<?php echo number_format($subtotal, 2); ?></span></p>
+                </div> -->
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="bill-form">
                     <h2><i class="fas fa-file-invoice-dollar"></i> Billing Information</h2>
                     <div class="input-group">
