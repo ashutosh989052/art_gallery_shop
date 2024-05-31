@@ -85,12 +85,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'shivnanda.kalaskar1@gmail.com';
-                $mail->Password   = 'jjfd pjrv spje dick'; 
+                $mail->Username   = 'piyushmanoorkarcoc@gmail.com';
+                $mail->Password   = 'pcmf kobf opyb enui'; 
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port       = 587;
 
-                $mail->setFrom('shivnanda.kalaskar1@gmail.com', 'Art Gallery Shop');
+                $mail->setFrom('piyushmanoorkar@gmail.com', 'Art Gallery Shop');
                 $mail->addAddress($email, $name);
 
                 $mail->isHTML(true);
