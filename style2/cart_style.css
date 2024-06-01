@@ -26,6 +26,8 @@ body {
     max-width: 1200px; 
 }
 
+
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -279,7 +281,7 @@ body {
 
 .product-scroll-animation {
     transform: translateY(10px); /* Initial position below viewport */
-    transition: transform 0.5s ease; /* Add transition for smooth animation */
+    transition: transform 1s ease; /* Add transition for smooth animation */
 }
 
 
