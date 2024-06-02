@@ -76,7 +76,7 @@ body {
 .action-buttons .logout-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #2c3e50;
+    background-color: #1b3358;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -85,7 +85,7 @@ body {
 
 .action-buttons .cart-btn:hover,
 .action-buttons .logout-btn:hover {
-    background-color: #34495e;
+    background-color: #06142e;
 }
 
 .product-grid {
@@ -140,7 +140,7 @@ body {
 .add-to-cart-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #2c3e50;
+    background-color: #af364e;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -149,7 +149,7 @@ body {
 }
 
 .add-to-cart-btn:hover {
-    background-color: #34495e;
+    background-color: #ac0e2d;
     transform: translateY(-2px);
 }
 
@@ -170,7 +170,7 @@ body {
     display: inline-block;
     margin-right: 10px;
     padding: 10px 20px;
-    background-color: #2c3e50;
+    background-color: #1b3358;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -178,7 +178,7 @@ body {
 }
 
 .navigation .btn:hover {
-    background-color: #34495e;
+    background-color: #06142e;
 }
 
 .footer {

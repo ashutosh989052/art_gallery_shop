@@ -46,7 +46,7 @@ if (isset($_POST['buy_now'])) {
         'quantity' => $quantity
     ];
     $_SESSION['cart'][] = $item;
-    header('Location: checkout.php'); // Assuming you have a checkout.php for handling the purchase
+    header('Location: bill.php'); // Assuming you have a checkout.php for handling the purchase
     exit();
 }
 ?>
