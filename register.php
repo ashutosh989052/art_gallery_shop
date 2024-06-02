@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span id="pass-error" class="error"></span>
                 </div>
 
-                <div class="g-recaptcha" data-sitekey="6Lf7-ecpAAAAAPbd8obDKCO_dBM_qugV6kGOgVz4"></div> <!-- reCAPTCHA widget -->
+                <div class="g-recaptcha" data-sitekey="6Lf7-ecpAAAAAPbd8obDKCO_dBM_qugV6kGOgVz4"></div>
 
                 <button type="submit" class="btn-register"><i class="fas fa-user-plus"></i> Register</button>
                 <div class="loader" id="loader"></div>
