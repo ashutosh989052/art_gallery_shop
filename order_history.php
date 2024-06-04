@@ -92,12 +92,12 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <tr>
                             <td><?php echo $item['item_name']; ?></td>
                             <td><?php echo $item['quantity']; ?></td>
-                            <td>$<?php echo $item['price']; ?></td>
+                            <td>₹<?php echo $item['price']; ?></td>
                         </tr>
                         <?php endforeach; ?>
                         <tr class="total-row">
                             <td colspan="2"><strong>Total:</strong></td>
-                            <td><strong>$<?php echo $order['total_amount']; ?></strong></td>
+                            <td><strong>₹<?php echo $order['total_amount']; ?></strong></td>
                         </tr>
                     </tbody>
                 </table>
