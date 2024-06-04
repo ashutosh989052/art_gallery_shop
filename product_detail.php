@@ -66,6 +66,7 @@ if (isset($_POST['buy_now'])) {
     <div class="welcome-section">
         <p class="welcome-message">Hello, <span id="username"><?php echo $username; ?></span>! <i class="fas fa-smile"></i></p>
         <div class="action-buttons">
+        <a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Cart</a>
             <a href="order_history.php" class="cart-btn"><i class="fas fa-history"></i> Order History</a>
             <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>

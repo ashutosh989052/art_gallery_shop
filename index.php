@@ -52,16 +52,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: true,
-                autoplaySpeed: 2000, // Adjust this value for the speed of slides
-                dots: true, // Display dots for navigation
-                arrows: false // Hide navigation arrows
-            });
-        });
-    </script>
     <footer class="footer">
         <div class="container">
             <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
