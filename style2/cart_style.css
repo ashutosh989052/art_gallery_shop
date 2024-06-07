@@ -72,13 +72,23 @@ body {
 .action-buttons .account-btn,
 .action-buttons .logout-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 12px; /* Adjusted padding */
     background-color: #1b3358;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    font-size: 0.9em; /* Adjusted font size */
 }
+
+@media (max-width: 767px) {
+    .action-buttons .cart-btn,
+    .action-buttons .account-btn,
+    .action-buttons .logout-btn {
+        padding: 6px 10px; /* Further adjusted padding for smaller buttons */
+    }
+}
+
 
 .action-buttons .cart-btn:hover,
 .action-buttons .account-btn:hover,
@@ -183,6 +193,7 @@ body {
 }
 
 .footer {
+    max-width: 1200px;
     background-color: #333;
     color: #333;
     text-align: center;
@@ -215,6 +226,7 @@ body {
         flex-direction: column;
         width: 100%;
         gap: 5px;
+        padding: 6px 10px;
     }
 
     .action-buttons .cart-btn,
@@ -223,7 +235,13 @@ body {
         text-align: center;
     }
 }
-
+@media (max-width: 767px) {
+    .action-buttons .cart-btn,
+    .action-buttons .account-btn,
+    .action-buttons .logout-btn {
+        padding: 6px 10px; /* Further adjusted padding for smaller buttons */
+    }
+}
 @media (max-width: 991px) {
     .product-grid,
     .search-results {
