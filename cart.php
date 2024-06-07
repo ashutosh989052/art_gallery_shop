@@ -17,9 +17,12 @@ if (isset($_SESSION['user_id'])) {
     }
 }
 
-function getProducts($connection) {
+function getProducts($connection, $search = "") {
     $products = [];
     $sql = "SELECT * FROM products";
+    if ($search) {
+        $sql .= " WHERE name LIKE '%$search%'";
+    }
     $result = mysqli_query($connection, $sql);
     if ($result && mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -29,7 +32,12 @@ function getProducts($connection) {
     return $products;
 }
 
-$products = getProducts($connection);
+$search = "";
+if (isset($_POST['search'])) {
+    $search = $_POST['search'];
+}
+
+$products = getProducts($connection, $search);
 
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
@@ -46,7 +54,6 @@ if (isset($_POST['add_to_cart'])) {
     $_SESSION['cart'][] = $item;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,14 +72,23 @@ if (isset($_POST['add_to_cart'])) {
         <div class="action-buttons">
             <a href="order_history.php" class="cart-btn"><i class="fas fa-history"></i> Order History</a>
             <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="account.php" class="account-btn"><i class="fas fa-user"></i> Account</a>
         </div>
     </div>
+    <form method="post" class="search-form" onsubmit="return false;">
+    <div class="search-container">
+        <input type="text" name="search" id="search" placeholder="Search for products..." value="<?php echo $search; ?>" onkeyup="showSuggestions(this.value)">
+        <button type="submit" class="search-btn" onclick="submitSearch()"><i class="fas fa-search"></i> Search</button>
+    </div>
+    <ul class="suggestions" id="suggestions"></ul>
+</form>
+
 </div>
 
 <div class="product-grid">
-        <?php if (empty($products)): ?>
+    <?php if (empty($products)): ?>
         <p>No products available.</p>
-        <?php else: ?>
+    <?php else: ?>
         <?php foreach ($products as $product): ?>
         <div class="product">
             <a href="product_detail.php?product_id=<?php echo $product['id']; ?>">
@@ -87,8 +103,8 @@ if (isset($_POST['add_to_cart'])) {
             </form>
         </div>
         <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
+    <?php endif; ?>
+</div>
 
 <div class="total-section">
     <p class="total-text">Total: <span id="total-amount">₹0.00</span></p>
@@ -97,11 +113,12 @@ if (isset($_POST['add_to_cart'])) {
 <div class="navigation">
     <a href="index.php" class="btn">Home</a>
     <?php if (!empty($_SESSION['cart'])): ?>
-    <a href="bill.php" class="btn">Checkout</a>
+        <a href="bill.php" class="btn">Checkout</a>
     <?php else: ?>
-    <button onclick="alert('Your cart is empty. Please add items before proceeding.')" class="btn">Checkout</button>
+        <button onclick="alert('Your cart is empty. Please add items before proceeding.')" class="btn">Checkout</button>
     <?php endif; ?>
 </div>
+
 <footer class="footer">
     <div class="container">
         <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
@@ -124,6 +141,42 @@ document.querySelectorAll('input[name="quantity"]').forEach(input => {
     });
 });
 calculateTotal();
+
+// AJAX function to show suggestions
+function showSuggestions(query) {
+    if (query.length == 0) {
+        document.getElementById("suggestions").innerHTML = "";
+        document.getElementById("suggestions").style.border = "0px";
+        return;
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const suggestions = JSON.parse(xhr.responseText);
+            let suggestionsHTML = "";
+            suggestions.forEach(function(suggestion) {
+                suggestionsHTML += "<li onclick='selectSuggestion(\"" + suggestion + "\")'>" + suggestion + "</li>";
+            });
+            document.getElementById("suggestions").innerHTML = suggestionsHTML;
+            document.getElementById("suggestions").style.border = "1px solid #ccc";
+        }
+    }
+    xhr.open("GET", "search_suggestions.php?query=" + query, true);
+    xhr.send();
+}
+
+// Function to select a suggestion
+function selectSuggestion(value) {
+    document.getElementById("search").value = value;
+    document.getElementById("suggestions").innerHTML = "";
+    submitSearch();
+}
+
+// Function to submit the search form
+function submitSearch() {
+    document.forms[0].submit();
+}
 </script>
 
 </body>
