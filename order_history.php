@@ -20,7 +20,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
 // Fetch order history for the user from the database
-$sql = "SELECT * FROM orders WHERE email = '$user_email'";
+$sql = "SELECT * FROM orders WHERE email = '$user_email' ORDER BY created_at DESC";
 $result = mysqli_query($connection, $sql);
 $orderHistory = [];
 if ($result && mysqli_num_rows($result) > 0) {
@@ -101,12 +101,11 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </table>
             </div>
             <div class="pdf-btn-container">
-                <form action="generate_pdf.php" method="post">
-                    <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
-                    <button type="submit" name="generate_pdf" class="pdf-btn"><i class="fas fa-file-pdf"></i>
-                        PDF</button>
-                </form>
-            </div>
+    <form action="generate_pdf_II.php" method="post">
+        <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
+        <button type="submit" name="generate_pdf" class="pdf-btn"><i class="fas fa-file-pdf"></i> PDF</button>
+    </form>
+</div>
         </div>
         <?php endforeach; ?>
         <?php endif; ?>
