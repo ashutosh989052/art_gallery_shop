@@ -6,6 +6,24 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: admin_login.php");
     exit;
 }
+
+// Fetch total number of orders from the database
+$sql_orders = "SELECT COUNT(*) AS total_orders FROM orders";
+$result_orders = mysqli_query($conn, $sql_orders);
+$row_orders = mysqli_fetch_assoc($result_orders);
+$total_orders = $row_orders['total_orders'];
+
+// Fetch total number of products from the database
+$sql_products = "SELECT COUNT(*) AS total_products FROM products";
+$result_products = mysqli_query($conn, $sql_products);
+$row_products = mysqli_fetch_assoc($result_products);
+$total_products = $row_products['total_products'];
+
+// Fetch total number of users from the database
+$sql_users = "SELECT COUNT(*) AS total_users FROM users";
+$result_users = mysqli_query($conn, $sql_users);
+$row_users = mysqli_fetch_assoc($result_users);
+$total_users = $row_users['total_users'];
 ?>
 
 <!DOCTYPE html>
@@ -41,11 +59,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
                 <h3>Total Orders</h3>
             </div>
             <div class="card-body">
-                <?php
-                    // Fetch total number of orders from the database and display it here
-                    $total_orders = 123; // Replace this with actual code to fetch total orders
-                    echo "<p>$total_orders</p>";
-                ?>
+                <p><?php echo $total_orders; ?></p>
             </div>
         </div>
 
@@ -55,11 +69,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
                 <h3>Total Products</h3>
             </div>
             <div class="card-body">
-                <?php
-                    // Fetch total number of products from the database and display it here
-                    $total_products = 456; // Replace this with actual code to fetch total products
-                    echo "<p>$total_products</p>";
-                ?>
+                <p><?php echo $total_products; ?></p>
             </div>
         </div>
 
@@ -69,11 +79,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
                 <h3>Total Users</h3>
             </div>
             <div class="card-body">
-                <?php
-                    // Fetch total number of users from the database and display it here
-                    $total_users = 789; // Replace this with actual code to fetch total users
-                    echo "<p>$total_users</p>";
-                ?>
+                <p><?php echo $total_users; ?></p>
             </div>
         </div>
     </div>

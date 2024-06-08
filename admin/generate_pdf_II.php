@@ -1,12 +1,12 @@
 <?php
-require_once('tcpdf/tcpdf.php');
+require_once('../tcpdf/tcpdf.php');
 
 // Include database connection
-require_once('db_connection.php');
+require_once('../db_connection.php');
 
 // Check if order_id is passed
-if (isset($_POST['order_id'])) {
-    $order_id = $_POST['order_id'];
+if (isset($_GET['order_id'])) {
+    $order_id = $_GET['order_id'];
     
     // Create new PDF document
     $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
@@ -22,15 +22,8 @@ if (isset($_POST['order_id'])) {
     $pdf->AddPage();
     // Set font
     $pdf->SetFont('helvetica', '', 12);
-    
-    // Calculate the horizontal center of the page
+
     $centerX = $pdf->GetPageWidth() / 2;
-    
-    // Add Art Gallery Shop heading
-    $pdf->Ln(5); 
-    $pdf->SetFont('helvetica', 'B', 20); // Bold and larger font size
-    $pdf->Cell(0, 10, 'Art Gallery Shop', 0, 1, 'C');
-    $pdf->Ln(5); // Add some space
     
     // Fetch the order details from the database based on order_id
     $sql = "SELECT * FROM orders WHERE id = ?";
@@ -125,7 +118,6 @@ if (isset($_POST['order_id'])) {
         $pdf->Cell(120, 8, 'Total Amount', 1, 0, 'C', 1);
         $pdf->Cell(40, 8, '₹' . number_format($totalAmount, 2), 1, 1, 'C');
         $pdf->Ln(5); // Add some space
-        
     } else {
         $pdf->Cell(0, 8, 'Order not found.', 0, 1);
     }
@@ -147,3 +139,6 @@ if (isset($_POST['order_id'])) {
     echo "Invalid request. No order ID provided.";
 }
 ?>
+
+        
+   

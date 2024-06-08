@@ -85,51 +85,60 @@ if (!isset($_SESSION['admin_logged_in'])) {
             </div>
         </div>
     </div>
+<script>
+    var buttons = document.querySelectorAll('.order-details-btn');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var orderId = this.getAttribute('data-order-id');
+            var name = this.getAttribute('data-name');
+            var email = this.getAttribute('data-email');
+            var mobile = this.getAttribute('data-mobile');
+            var address = this.getAttribute('data-address');
+            var area = this.getAttribute('data-area');
+            var district = this.getAttribute('data-district');
+            var pincode = this.getAttribute('data-pincode');
+            var orderDetails = JSON.parse(this.getAttribute('data-order-details'));
+            var totalAmount = this.getAttribute('data-total-amount');
+            var createdAt = this.getAttribute('data-created-at');
 
-    <script>
-        var buttons = document.querySelectorAll('.order-details-btn');
-        buttons.forEach(function(button) {
-            button.addEventListener('click', function() {
+            var table = "<table><tbody>";
+            orderDetails.forEach(function(item) {
+                table += "<tr><td>" + item.item_name + "</td><td>" + item.quantity + "</td><td>" + item.price + "</td><td>" + item.total + "</td></tr>";
+            });
+            table += "</tbody></table>";
+
+            var detailsHTML = "<p><strong>Order ID:</strong> " + orderId + "</p>" +
+                              "<p><strong>Name:</strong> " + name + "</p>" +
+                              "<p><strong>Email:</strong> " + email + "</p>" +
+                              "<p><strong>Mobile:</strong> " + mobile + "</p>" +
+                              "<p><strong>Address:</strong> " + address + "</p>" +
+                              "<p><strong>Area:</strong> " + area + "</p>" +
+                              "<p><strong>District:</strong> " + district + "</p>" +
+                              "<p><strong>Pincode:</strong> " + pincode + "</p>" +
+                              "<p><strong>Total Amount:</strong> " + totalAmount + "</p>" +
+                              "<p><strong>Created At:</strong> " + createdAt + "</p>" +
+                              "<h4>Order Details</h4>" + table +
+                              "<button class='download-btn' data-order-id='" + orderId + "'><i class='fas fa-download download-icon'></i>Download PDF</button>"; // Added download PDF button
+
+            document.getElementById('order-details').innerHTML = detailsHTML;
+            document.getElementById('order-details-modal').style.display = 'block';
+            
+            // Event listener for download PDF button (inside the modal)
+            var downloadButton = document.querySelector('.download-pdf-btn');
+            downloadButton.addEventListener('click', function() {
                 var orderId = this.getAttribute('data-order-id');
-                var name = this.getAttribute('data-name');
-                var email = this.getAttribute('data-email');
-                var mobile = this.getAttribute('data-mobile');
-                var address = this.getAttribute('data-address');
-                var area = this.getAttribute('data-area');
-                var district = this.getAttribute('data-district');
-                var pincode = this.getAttribute('data-pincode');
-                var orderDetails = JSON.parse(this.getAttribute('data-order-details'));
-                var totalAmount = this.getAttribute('data-total-amount');
-                var createdAt = this.getAttribute('data-created-at');
-                
-                var table = "<table><tbody>";
-                orderDetails.forEach(function(item) {
-                    table += "<tr><td>" + item.item_name + "</td><td>" + item.quantity + "</td><td>" + item.price + "</td><td>" + item.total + "</td></tr>";
-                });
-                table += "</tbody></table>";
-
-                var detailsHTML = "<p><strong>Order ID:</strong> " + orderId + "</p>" +
-                                  "<p><strong>Name:</strong> " + name + "</p>" +
-                                  "<p><strong>Email:</strong> " + email + "</p>" +
-                                  "<p><strong>Mobile:</strong> " + mobile + "</p>" +
-                                  "<p><strong>Address:</strong> " + address + "</p>" +
-                                  "<p><strong>Area:</strong> " + area + "</p>" +
-                                  "<p><strong>District:</strong> " + district + "</p>" +
-                                  "<p><strong>Pincode:</strong> " + pincode + "</p>" +
-                                  "<p><strong>Total Amount:</strong> " + totalAmount + "</p>" +
-                                  "<p><strong>Created At:</strong> " + createdAt + "</p>" +
-                                  "<h4>Order Details</h4>" + table;
-
-                document.getElementById('order-details').innerHTML = detailsHTML;
-                document.getElementById('order-details-modal').style.display = 'block';
+                window.location.href = 'generate_pdf_II.php?order_id=' + orderId; // Redirect to PDF generation script
             });
         });
+    });
 
-        document.querySelector('.close').addEventListener('click', function() {
-            document.getElementById('order-details-modal').style.display = 'none';
-        });
-    </script>
-        <footer class="footer">
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('order-details-modal').style.display = 'none';
+    });
+</script>
+
+
+    <footer class="footer">
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>

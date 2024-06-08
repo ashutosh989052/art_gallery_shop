@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['password']; // No encryption for simplicity
+    $password = $_POST['password']; 
 
     $sql = "INSERT INTO admin_users (name, email, password) VALUES ('$name', '$email', '$password')";
     if ($conn->query($sql) === TRUE) {

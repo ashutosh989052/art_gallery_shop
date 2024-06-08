@@ -150,3 +150,22 @@ th {
     width: 100%;
     bottom: 0;
 }
+    /* Style for the download button */
+    .download-btn {
+        background-color: #006DA4; /* Green background color */
+        border: none; /* Remove border */
+        color: white; /* White text color */
+        padding: 10px 20px; /* Add padding */
+        text-align: center; /* Center-align text */
+        text-decoration: none; /* Remove default underline */
+        display: inline-block; /* Make it inline-block to respect padding */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        border-radius: 5px; /* Add rounded corners */
+        transition: background-color 0.3s; /* Add transition effect on background-color */
+    }
+
+    /* Hover effect for the download button */
+    .download-btn:hover {
+        background-color: #004D74; /* Darker green background color on hover */
+    }
