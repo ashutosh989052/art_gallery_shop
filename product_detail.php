@@ -53,6 +53,7 @@ if (isset($_POST['buy_now'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,18 +61,20 @@ if (isset($_POST['buy_now'])) {
     <link rel="stylesheet" href="style2/product_detail_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
-<div class="container">
-    <h1 class="project-name"><i class="fas fa-palette"></i> Art Gallery Shop</h1>
-    <div class="welcome-section">
-        <p class="welcome-message">Hello, <span id="username"><?php echo $username; ?></span>! <i class="fas fa-smile"></i></p>
-        <div class="action-buttons">
-        <a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Cart</a>
-            <a href="order_history.php" class="cart-btn"><i class="fas fa-history"></i> Order History</a>
-            <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <div class="container">
+        <h1 class="project-name"><i class="fas fa-palette"></i> Art Gallery Shop</h1>
+        <div class="welcome-section">
+            <p class="welcome-message">Hello, <span id="username"><?php echo $username; ?></span>! <i
+                    class="fas fa-smile"></i></p>
+            <div class="action-buttons">
+                <a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Cart</a>
+                <a href="order_history.php" class="cart-btn"><i class="fas fa-history"></i> Order History</a>
+                <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
         </div>
     </div>
-</div>
     <div class="product-detail-container">
         <h1><?php echo $product['name']; ?></h1>
         <img src="images/<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
@@ -86,9 +89,10 @@ if (isset($_POST['buy_now'])) {
         <a href="cart.php" class="btn">Back to Cart</a>
     </div>
     <footer class="footer">
-    <div class="container">
-        <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
-    </div>
-</footer>
+        <div class="container">
+            <p>&copy; <?php echo date('Y'); ?> Art Gallery Shop. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

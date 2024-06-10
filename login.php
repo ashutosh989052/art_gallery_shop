@@ -55,8 +55,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" id="password" name="password" placeholder="&#xf023; Password" required>
             </div>
             <div class="form-group custom-recaptcha">
-            <div class="g-recaptcha" data-sitekey="6Lf7-ecpAAAAAPbd8obDKCO_dBM_qugV6kGOgVz4"></div> <!-- reCAPTCHA widget -->
-</div>
+                <div class="g-recaptcha" data-sitekey="6Lf7-ecpAAAAAPbd8obDKCO_dBM_qugV6kGOgVz4"></div>
+                <!-- reCAPTCHA widget -->
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</button>
             </div>

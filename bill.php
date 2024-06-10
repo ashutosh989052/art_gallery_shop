@@ -297,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </tr>
                 </table>
 
-            <!--    <div class="total">
+                <!--    <div class="total">
                     <p>Total Amount: <span id="total-amount">₹<?php echo number_format($subtotal, 2); ?></span></p>
                 </div> -->
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="bill-form">
@@ -336,8 +336,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <button type="submit" class="btn">
-    Confirm Order <i class="fas fa-check"></i>
-</button>
+                        Confirm Order <i class="fas fa-check"></i>
+                    </button>
 
                     <a href="cart.php" class="btn"><i class="fas fa-shopping-cart"></i> Cart</a>
                 </form>
