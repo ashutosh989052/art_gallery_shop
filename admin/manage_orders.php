@@ -9,6 +9,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Manage Orders</title>
@@ -17,8 +18,9 @@ if (!isset($_SESSION['admin_logged_in'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="js/scripts.js" defer></script>
 </head>
+
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="Logo">
             <h1>Art Gallery Shop</h1>
@@ -85,7 +87,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
             </div>
         </div>
     </div>
-<script>
+    <script>
     var buttons = document.querySelectorAll('.order-details-btn');
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
@@ -103,31 +105,34 @@ if (!isset($_SESSION['admin_logged_in'])) {
 
             var table = "<table><tbody>";
             orderDetails.forEach(function(item) {
-                table += "<tr><td>" + item.item_name + "</td><td>" + item.quantity + "</td><td>" + item.price + "</td><td>" + item.total + "</td></tr>";
+                table += "<tr><td>" + item.item_name + "</td><td>" + item.quantity +
+                    "</td><td>" + item.price + "</td><td>" + item.total + "</td></tr>";
             });
             table += "</tbody></table>";
 
             var detailsHTML = "<p><strong>Order ID:</strong> " + orderId + "</p>" +
-                              "<p><strong>Name:</strong> " + name + "</p>" +
-                              "<p><strong>Email:</strong> " + email + "</p>" +
-                              "<p><strong>Mobile:</strong> " + mobile + "</p>" +
-                              "<p><strong>Address:</strong> " + address + "</p>" +
-                              "<p><strong>Area:</strong> " + area + "</p>" +
-                              "<p><strong>District:</strong> " + district + "</p>" +
-                              "<p><strong>Pincode:</strong> " + pincode + "</p>" +
-                              "<p><strong>Total Amount:</strong> " + totalAmount + "</p>" +
-                              "<p><strong>Created At:</strong> " + createdAt + "</p>" +
-                              "<h4>Order Details</h4>" + table +
-                              "<button class='download-btn' data-order-id='" + orderId + "'><i class='fas fa-download download-icon'></i>Download PDF</button>"; // Added download PDF button
+                "<p><strong>Name:</strong> " + name + "</p>" +
+                "<p><strong>Email:</strong> " + email + "</p>" +
+                "<p><strong>Mobile:</strong> " + mobile + "</p>" +
+                "<p><strong>Address:</strong> " + address + "</p>" +
+                "<p><strong>Area:</strong> " + area + "</p>" +
+                "<p><strong>District:</strong> " + district + "</p>" +
+                "<p><strong>Pincode:</strong> " + pincode + "</p>" +
+                "<p><strong>Total Amount:</strong> " + totalAmount + "</p>" +
+                "<p><strong>Created At:</strong> " + createdAt + "</p>" +
+                "<h4>Order Details</h4>" + table +
+                "<button class='download-btn' data-order-id='" + orderId +
+                "'><i class='fas fa-download download-icon'></i>Download PDF</button>"; // Added download PDF button
 
             document.getElementById('order-details').innerHTML = detailsHTML;
             document.getElementById('order-details-modal').style.display = 'block';
-            
+
             // Event listener for download PDF button (inside the modal)
             var downloadButton = document.querySelector('.download-pdf-btn');
             downloadButton.addEventListener('click', function() {
                 var orderId = this.getAttribute('data-order-id');
-                window.location.href = 'generate_pdf_II.php?order_id=' + orderId; // Redirect to PDF generation script
+                window.location.href = 'generate_pdf_II.php?order_id=' +
+                orderId; // Redirect to PDF generation script
             });
         });
     });
@@ -135,12 +140,12 @@ if (!isset($_SESSION['admin_logged_in'])) {
     document.querySelector('.close').addEventListener('click', function() {
         document.getElementById('order-details-modal').style.display = 'none';
     });
-</script>
+    </script>
 
 
     <footer class="footer">
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
-</html>
 
+</html>

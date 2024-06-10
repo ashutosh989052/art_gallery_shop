@@ -20,14 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Admin Login</title>
     <link rel="stylesheet" href="css/admin_login_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
     <div class="login-container">
+        <img src="images/logo.png" alt="Logo">
         <h2> Admin Login</h2>
         <form action="admin_login.php" method="post">
             <div class="form-group">
@@ -45,4 +48,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

@@ -34,6 +34,7 @@ $admin = $result->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Edit Admin User</title>
@@ -41,8 +42,9 @@ $admin = $result->fetch_assoc();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
+
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="Logo">
             <h1>Art Gallery Shop</h1>
@@ -60,11 +62,11 @@ $admin = $result->fetch_assoc();
         <h2>Edit Admin User</h2>
         <form action="edit_admin.php?id=<?php echo $id; ?>" method="post">
             <div class="form-group">
-            <label for="name"><i class="fas fa-user"></i> Name</label>
+                <label for="name"><i class="fas fa-user"></i> Name</label>
                 <input type="text" name="name" value="<?php echo $admin['name']; ?>" placeholder="Name" required>
             </div>
             <div class="form-group">
-            <label for="name"><i class="fas fa-envelope"></i> Email</label>
+                <label for="name"><i class="fas fa-envelope"></i> Email</label>
                 <input type="email" name="email" value="<?php echo $admin['email']; ?>" placeholder="Email" required>
             </div>
             <div class="form-group">
@@ -78,4 +80,5 @@ $admin = $result->fetch_assoc();
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

@@ -30,6 +30,7 @@ $product = $result->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Edit Product</title>
@@ -37,6 +38,7 @@ $product = $result->fetch_assoc();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -58,19 +60,23 @@ $product = $result->fetch_assoc();
         <form action="edit_product.php?id=<?php echo $id; ?>" method="post">
             <div class="form-group">
                 <label for="name"><i class="fas fa-tag"></i> Product Name</label>
-                <input type="text" id="name" name="name" value="<?php echo $product['name']; ?>" placeholder="Product Name" required>
+                <input type="text" id="name" name="name" value="<?php echo $product['name']; ?>"
+                    placeholder="Product Name" required>
             </div>
             <div class="form-group">
                 <label for="price"><i class="fas fa-dollar-sign"></i> Price</label>
-                <input type="text" id="price" name="price" value="<?php echo $product['price']; ?>" placeholder="Price" required>
+                <input type="text" id="price" name="price" value="<?php echo $product['price']; ?>" placeholder="Price"
+                    required>
             </div>
             <div class="form-group">
                 <label for="image"><i class="fas fa-image"></i> Image URL</label>
-                <input type="text" id="image" name="image" value="<?php echo $product['image']; ?>" placeholder="Image URL" required>
+                <input type="text" id="image" name="image" value="<?php echo $product['image']; ?>"
+                    placeholder="Image URL" required>
             </div>
             <div class="form-group">
                 <label for="description"><i class="fas fa-align-left"></i> Description</label>
-                <textarea id="description" name="description" placeholder="Description" required><?php echo $product['description']; ?></textarea>
+                <textarea id="description" name="description" placeholder="Description"
+                    required><?php echo $product['description']; ?></textarea>
             </div>
             <button type="submit"><i class="fas fa-save"></i> Update Product</button>
         </form>
@@ -79,4 +85,5 @@ $product = $result->fetch_assoc();
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

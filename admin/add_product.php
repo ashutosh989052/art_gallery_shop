@@ -24,14 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Add Product</title>
     <link rel="stylesheet" href="css/add_product_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="Logo">
             <h1>Art Gallery Shop</h1>
@@ -71,4 +73,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

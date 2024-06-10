@@ -139,6 +139,3 @@ if (isset($_GET['order_id'])) {
     echo "Invalid request. No order ID provided.";
 }
 ?>
-
-        
-   

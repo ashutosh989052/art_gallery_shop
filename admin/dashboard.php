@@ -28,6 +28,7 @@ $total_users = $row_users['total_users'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +37,7 @@ $total_users = $row_users['total_users'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -83,11 +85,12 @@ $total_users = $row_users['total_users'];
             </div>
         </div>
     </div>
-    
+
     <footer class="footer">
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 
     <script src="js/scripts.js"></script>
 </body>
+
 </html>

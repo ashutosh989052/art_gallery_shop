@@ -35,6 +35,7 @@ $user = $result->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Edit User</title>
@@ -42,8 +43,9 @@ $user = $result->fetch_assoc();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
+
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="Logo">
             <h1>Art Gallery Shop</h1>
@@ -63,11 +65,13 @@ $user = $result->fetch_assoc();
         <form action="edit_user.php?id=<?php echo $id; ?>" method="post">
             <div class="form-group">
                 <label for="name"><i class="fas fa-user"></i> Name</label>
-                <input type="text" id="name" name="name" value="<?php echo $user['name']; ?>" placeholder="Name" required>
+                <input type="text" id="name" name="name" value="<?php echo $user['name']; ?>" placeholder="Name"
+                    required>
             </div>
             <div class="form-group">
                 <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                <input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" placeholder="Email" required>
+                <input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" placeholder="Email"
+                    required>
             </div>
             <div class="form-group">
                 <label for="password"><i class="fas fa-lock"></i> New Password (leave blank to keep current)</label>
@@ -75,7 +79,8 @@ $user = $result->fetch_assoc();
             </div>
             <div class="form-group">
                 <label for="contact"><i class="fas fa-phone"></i> Contact</label>
-                <input type="text" id="contact" name="contact" value="<?php echo $user['contact']; ?>" placeholder="Contact" required>
+                <input type="text" id="contact" name="contact" value="<?php echo $user['contact']; ?>"
+                    placeholder="Contact" required>
             </div>
             <button type="submit"><i class="fas fa-save"></i> Update User</button>
         </form>
@@ -84,4 +89,5 @@ $user = $result->fetch_assoc();
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
