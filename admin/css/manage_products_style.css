@@ -23,6 +23,7 @@ body {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -45,6 +46,7 @@ body {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -79,7 +81,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -108,4 +111,65 @@ a:hover {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Add this CSS to manage_products_style.css */
+
+/* Search Container */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.search-container button i {
+    font-size: 20px;
+    color: #888;
+}
+
+/* Suggestions Dropdown */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    transition: background-color 0.2s;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
 }

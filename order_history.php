@@ -101,12 +101,12 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </table>
             </div>
             <div class="pdf-btn-container">
-                <form action="generate_pdf_II.php" method="post">
-                    <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
-                    <button type="submit" name="generate_pdf" class="pdf-btn"><i class="fas fa-file-pdf"></i>
-                        PDF</button>
-                </form>
-            </div>
+    <form action="generate_pdf_II.php" method="post">
+        <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
+        <button type="submit" name="generate_pdf" class="pdf-btn"><i class="fas fa-file-pdf"></i> PDF</button>
+    </form>
+</div>
+
         </div>
         <?php endforeach; ?>
         <?php endif; ?>

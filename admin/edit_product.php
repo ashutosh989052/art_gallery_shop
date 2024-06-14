@@ -35,26 +35,14 @@ $product = $result->fetch_assoc();
     <meta charset="UTF-8">
     <title>Edit Product</title>
     <link rel="stylesheet" href="css/edit_product_style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo">
-            <h1>Art Gallery Shop</h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="manage_orders.php"><i class="fas fa-shopping-basket"></i> Manage Orders</a></li>
-            <li><a href="manage_products.php"><i class="fas fa-box-open"></i> Manage Products</a></li>
-            <li><a href="manage_users.php"><i class="fas fa-users"></i> Manage Users</a></li>
-            <li><a href="manage_admins.php"><i class="fas fa-user-cog"></i> Manage Admins</a></li>
-            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        </ul>
-    </nav>
-
+<?php include 'navbar.php'; ?>
     <div class="products-container">
         <h2>Edit Product</h2>
         <form action="edit_product.php?id=<?php echo $id; ?>" method="post">

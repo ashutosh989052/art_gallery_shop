@@ -9,7 +9,7 @@ body {
 }
 
 .products-container {
-    max-width: 600px;
+    max-width: 90%; /* Adjusted max-width for responsiveness */
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -29,49 +29,6 @@ body {
     }
 }
 
-/* Header Styles */
-.navbar {
-    background-color: #004D74;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    animation: fadeInDown 0.5s ease-in-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.navbar h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-}
-
 /* Form Styles */
 .form-group {
     margin-bottom: 20px;
@@ -85,7 +42,7 @@ label {
 
 input[type="text"],
 textarea {
-    width: calc(100% - 20px);
+    width: 100%; /* Adjusted width for responsiveness */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -113,13 +70,7 @@ button[type="submit"]:hover {
     background-color: #004D74; /* Adjusted hover color */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .products-container {
-        width: 90%;
-    }
-}
-
+/* Footer styles */
 .footer {
     background-color: #004D74;
     color: #fff;
@@ -129,3 +80,4 @@ button[type="submit"]:hover {
     width: 100%;
     bottom: 0;
 }
+

@@ -16,6 +16,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: slideIn 0.5s ease-in-out;
+    /* Add overflow property to control overflow */
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 @keyframes slideIn {
@@ -27,49 +30,6 @@ body {
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-/* Header Styles */
-.navbar {
-    background-color: #004D74;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    animation: fadeInDown 0.5s ease-in-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.navbar h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
 }
 
 /* Table Styles */
@@ -108,4 +68,61 @@ a:hover {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.search-container button i {
+    font-size: 20px;
+    color: #888;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    transition: background-color 0.2s;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
 }

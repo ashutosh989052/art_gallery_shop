@@ -9,7 +9,8 @@ body {
 }
 
 .login-container {
-    max-width: 400px;
+    width: 90%; /* Adjusted width for responsiveness */
+    max-width: 400px; /* Maximum width for the container */
     margin: 100px auto;
     background-color: #fff;
     padding: 20px;
@@ -43,7 +44,7 @@ label {
 input[type="email"],
 input[type="password"],
 button[type="submit"] {
-    width: calc(100% - 20px);
+    width: calc(100% - 20px); /* Adjusted width for responsiveness */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -73,6 +74,8 @@ button[type="submit"]:hover {
 .fa {
     margin-right: 5px;
 }
+
+/* Footer styles */
 .footer {
     background-color: #004D74;
     color: #fff;

@@ -29,48 +29,6 @@ body {
     }
 }
 
-/* Navbar Styles */
-.navbar {
-    background-color: #004D74;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    animation: fadeInDown 0.5s ease-in-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.navbar h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-}
 
 /* Form Styles */
 .form-group {
