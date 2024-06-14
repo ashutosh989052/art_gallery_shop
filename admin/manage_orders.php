@@ -119,6 +119,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
             </div>
         </div>
     </div>
+    <br><br>
     <script>
         var buttons = document.querySelectorAll('.order-details-btn');
         buttons.forEach(function(button) {

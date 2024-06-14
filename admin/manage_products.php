@@ -122,6 +122,7 @@ $result = $conn->query($sql);
             </tbody>
         </table>
     </div>
+    <br><br>
     <footer class="footer">
         <p>&copy; 2024 Art Gallery Shop. All rights reserved.</p>
     </footer>
