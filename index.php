@@ -20,7 +20,7 @@
             <div class="nav-links">
                 <a href="register.php" class="button"><i class="fas fa-user-plus"></i> Register</a>
                 <a href="login.php" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
-                <a href="admin_login.php" class="button"><i class="fas fa-user-lock"></i> Admin Login</a>
+                <a href="admin/admin_login.php" class="button"><i class="fas fa-user-lock"></i> Admin Login</a>
             </div>
         </div>
     </header>
