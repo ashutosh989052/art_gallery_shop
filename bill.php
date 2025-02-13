@@ -1,14 +1,25 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 require_once('db_connection.php');
 
-// Include PHPMailer
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
+use PHPMailer\PHPMailer\SMTP;
+
+// Include PHPMailer
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\Exception;
+// require 'src/Exception.php';
+// require 'src/PHPMailer.php';
+// require 'src/SMTP.php';
 
 //API
 function getCityName($pincode) {
@@ -86,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
                 $mail->Username   = 'piyushmanoorkarcoc@gmail.com';
-                $mail->Password   = 'pcmf kobf opyb enui'; 
+                $mail->Password   = 'wtfd pimn wklv mzbc'; 
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port       = 587;
 
