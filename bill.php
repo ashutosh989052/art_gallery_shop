@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 session_start();
 require_once('db_connection.php');
 
+// Include PHPMailer
 require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
@@ -13,13 +14,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-// Include PHPMailer
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\SMTP;
-// use PHPMailer\PHPMailer\Exception;
-// require 'src/Exception.php';
-// require 'src/PHPMailer.php';
-// require 'src/SMTP.php';
+
 
 //API
 function getCityName($pincode) {
@@ -85,9 +80,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $orderDetailsJson = json_encode($orderDetails);
         $totalAmount = $subtotal;
+        // Retrieve the logged-in user ID
+        $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
-        $sql = "INSERT INTO orders (name, email, mobile, address, area, district, pincode, order_details, total_amount) 
-        VALUES ('$name', '$email', '$mobile', '$address', '$selectedPostOffice', '$district', '$pincode', '$orderDetailsJson', '$totalAmount')";
+        $sql = "INSERT INTO orders (user_id, name, email, mobile, address, area, district, pincode, order_details, total_amount) 
+        VALUES ('$user_id', '$name', '$email', '$mobile', '$address', '$selectedPostOffice', '$district', '$pincode', '$orderDetailsJson', '$totalAmount')";
+
 
         if ($connection->query($sql) === TRUE) {
             // Sending email

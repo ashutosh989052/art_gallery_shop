@@ -87,7 +87,6 @@ if (isset($_POST['add_to_cart'])) {
             </div>
             <ul class="suggestions" id="suggestions"></ul>
         </form>
-
     </div>
 
     <div class="product-grid">

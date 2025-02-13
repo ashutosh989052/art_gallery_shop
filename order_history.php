@@ -20,7 +20,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
 // Fetch order history for the user from the database
-$sql = "SELECT * FROM orders WHERE email = '$user_email' ORDER BY created_at DESC";
+$sql = "SELECT * FROM orders WHERE user_id = $user_id ORDER BY created_at DESC";
 $result = mysqli_query($connection, $sql);
 $orderHistory = [];
 if ($result && mysqli_num_rows($result) > 0) {

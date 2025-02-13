@@ -90,7 +90,7 @@ if (isset($_POST['order_id'])) {
         $pdf->Cell(30, 8, 'Quantity', 1, 0, 'C', 1);
         $pdf->Cell(40, 8, 'Price', 1, 0, 'C', 1);
         $pdf->Cell(40, 8, 'Total', 1, 1, 'C', 1);
-        $pdf->SetFont('helvetica', '', 10); // Normal font size
+        $pdf->SetFont('dejavusans', '', 10); // Normal font size
         $pdf->SetFillColor(255, 255, 255); // White background for table content
     
         // Output order details in table
@@ -113,7 +113,7 @@ if (isset($_POST['order_id'])) {
         $totalAmountX = $centerX - (120 + 40) / 2;
     
         // Add total amount row
-        $pdf->SetFont('helvetica', 'B', 10);
+        $pdf->SetFont('dejavusans', 'B', 10);
         $pdf->SetX($totalAmountX); // Center align the cell
         $pdf->Cell(120, 8, 'Total Amount', 1, 0, 'C', 1);
         $pdf->Cell(40, 8, '₹' . number_format($totalAmount, 2), 1, 1, 'C');
