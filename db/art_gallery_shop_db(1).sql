@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 10, 2024 at 06:46 PM
+-- Host: localhost
+-- Generation Time: Feb 17, 2025 at 11:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,25 +55,27 @@ CREATE TABLE `orders` (
   `mobile` varchar(15) NOT NULL,
   `address` varchar(255) NOT NULL,
   `area` varchar(22) NOT NULL,
-  `selected_post_office` varchar(22) NOT NULL,
+  `selected_post_office` varchar(60) DEFAULT NULL,
   `district` varchar(100) NOT NULL,
   `pincode` varchar(10) NOT NULL,
   `order_details` text NOT NULL,
   `total_amount` decimal(10,2) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `name`, `email`, `mobile`, `address`, `area`, `selected_post_office`, `district`, `pincode`, `order_details`, `total_amount`, `created_at`) VALUES
-(104, 'Piyush Manoorkar', 'ashu989052@gmail.com', '9890525854', 'Shiv vijay colony', 'Ashoknagar (Nanded)', '', 'Nanded', '431605', '[{\"item_name\":\"Product1\",\"quantity\":\"1\",\"price\":\"22.74\",\"total\":22.74},{\"item_name\":\"Product2\",\"quantity\":\"1\",\"price\":\"48.85\",\"total\":48.85}]', 71.59, '2024-05-27 06:54:34'),
-(105, 'Piyush Manoorkar', 'ashu989052@gmail.com', '9890525854', '303, chintamani appartment, shiv-vijay colony\r\nChaitany nagar road', 'Pimpalgaon', '', 'Nanded', '431605', '[{\"item_name\":\"Product1\",\"quantity\":\"1\",\"price\":\"22.74\",\"total\":22.74},{\"item_name\":\"Product2\",\"quantity\":\"4\",\"price\":\"48.85\",\"total\":195.4}]', 218.14, '2024-05-29 18:19:59'),
-(107, 'Ashutosh Kalyankar', 'ashu989052@gmail.com', '9890525854', '303, chintamani appartment', 'Chaitanynagar Nanded ', '', 'Nanded', '431605', '[{\"item_name\":\"Product2\",\"quantity\":\"1\",\"price\":\"48.85\",\"total\":48.85}]', 48.85, '2024-05-31 09:39:10'),
-(108, 'Ashutosh Kalyankar', 'ashu989052@gmail.com', '9890525854', 'nanded', 'Chaitanynagar Nanded ', '', 'Nanded', '431605', '[{\"item_name\":\"Product14\",\"quantity\":\"1\",\"price\":\"54.23\",\"total\":54.23}]', 54.23, '2024-06-02 17:47:13'),
-(109, 'Piyush Manoorkar', 'ashu989052@gmail.com', '9890525854', 'Chintamani Apartment Chaitanya Nagar', 'Ashoknagar (Nanded)', '', 'Nanded', '431605', '[{\"item_name\":\"Product2\",\"quantity\":\"1\",\"price\":\"48.85\",\"total\":48.85},{\"item_name\":\"Product11\",\"quantity\":\"1\",\"price\":\"69.48\",\"total\":69.48}]', 118.33, '2024-06-04 17:38:56'),
-(110, 'Ashutosh Kalyankar', 'ashu989052@gmail.com', '9890525854', 'Nanded', 'Taroda BK', '', 'Nanded', '431605', '[{\"item_name\":\"Product2\",\"quantity\":\"6\",\"price\":\"48.85\",\"total\":293.1}]', 293.10, '2024-06-07 09:04:31');
+INSERT INTO `orders` (`id`, `name`, `email`, `mobile`, `address`, `area`, `selected_post_office`, `district`, `pincode`, `order_details`, `total_amount`, `created_at`, `user_id`) VALUES
+(109, 'Piyush Manoorkar', 'ashu989052@gmail.com', '9890525854', 'Chintamani Apartment Chaitanya Nagar', 'Ashoknagar (Nanded)', '', 'Nanded', '431605', '[{\"item_name\":\"Product2\",\"quantity\":\"1\",\"price\":\"48.85\",\"total\":48.85},{\"item_name\":\"Product11\",\"quantity\":\"1\",\"price\":\"69.48\",\"total\":69.48}]', 118.33, '2024-06-04 17:38:56', 10),
+(110, 'Ashutosh Kalyankar', 'ashu989052@gmail.com', '9890525854', 'Nanded', 'Taroda BK', '', 'Nanded', '431605', '[{\"item_name\":\"Product2\",\"quantity\":\"6\",\"price\":\"48.85\",\"total\":293.1}]', 293.10, '2024-06-07 09:04:31', 0),
+(111, 'ashutosh', 'ashu989052@gmail.com', '9897632124', 'ashu', 'Pimpalgaon', NULL, 'Nanded', '431605', '[{\"item_name\":\"Product19\",\"quantity\":\"1\",\"price\":\"45.23\",\"total\":45.22999999999999687361196265555918216705322265625}]', 45.23, '2025-02-13 01:23:59', 0),
+(112, 'Ashutosh ', 'ashu989052@gmail.com', '9856789123', 'Taroda BK NANDED', 'Chaitanynagar Nanded ', NULL, 'Nanded', '431605', '[{\"item_name\":\"Product2\",\"quantity\":\"1\",\"price\":\"48.85\",\"total\":48.85000000000000142108547152020037174224853515625}]', 48.85, '2025-02-13 09:15:20', 0),
+(113, 'ashutosh', 'ashu989052@gmail.com', '9897632124', 'ashu', 'Chaitanynagar Nanded ', NULL, 'Nanded', '431605', '[{\"item_name\":\"Product1\",\"quantity\":\"1\",\"price\":\"22.74\",\"total\":22.739999999999998436805981327779591083526611328125}]', 22.74, '2025-02-13 10:19:01', 10),
+(114, 'Jibraeel Shaikh', 'devilcloset007@gmail.com', '7517296433', 'Ramanand Nagar Pachora', 'Pachora', NULL, 'Jalgaon', '424201', '[{\"item_name\":\"Product1\",\"quantity\":\"1\",\"price\":\"22.74\",\"total\":22.739999999999998436805981327779591083526611328125},{\"item_name\":\"Product 20\",\"quantity\":\"1\",\"price\":\"30.22\",\"total\":30.219999999999998863131622783839702606201171875},{\"item_name\":\"Product19\",\"quantity\":\"1\",\"price\":\"45.23\",\"total\":45.22999999999999687361196265555918216705322265625},{\"item_name\":\"Product4\",\"quantity\":\"1\",\"price\":\"53.46\",\"total\":53.46000000000000085265128291212022304534912109375},{\"item_name\":\"Product5\",\"quantity\":\"1\",\"price\":\"59.32\",\"total\":59.32000000000000028421709430404007434844970703125},{\"item_name\":\"New painting\",\"quantity\":\"1\",\"price\":\"20.00\",\"total\":20},{\"item_name\":\"Product2\",\"quantity\":\"31\",\"price\":\"48.85\",\"total\":1514.350000000000136424205265939235687255859375}]', 1745.32, '2025-02-13 15:12:20', 13),
+(115, 'Varsha Kalyankar', 'ashu989052@gmail.com', '9309530158', 'Chintamani apartment', 'Kothrud', NULL, 'Pune', '411038', '[{\"item_name\":\"Product16\",\"quantity\":\"1\",\"price\":\"88.23\",\"total\":88.2300000000000039790393202565610408782958984375}]', 88.23, '2025-02-14 19:14:43', 10);
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,9 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `description`) VALUES
 (17, 'Product17', 50.23, 'img17.jpg', 'Abstract 17 Product 17	'),
 (18, 'Product18', 92.23, 'img18.jpg', 'Abstract 18 Product 18	'),
 (19, 'Product19', 45.23, 'img19.jpg', 'Abstract 19 Product 19'),
-(20, 'Product 20', 30.22, 'img20.jpg', 'Product 20 Abstract 20');
+(20, 'Product 20', 30.22, 'img20.jpg', 'Product 20 Abstract 20'),
+(32, 'New Product', 60.30, 'pexels-steve-4371628.jpg', 'Best painting ever.'),
+(33, 'New Product', 60.30, 'pexels-steve-4371628.jpg', 'Best painting ever.');
 
 -- --------------------------------------------------------
 
@@ -136,7 +140,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `contact`) VALUES
 (10, 'Ashutosh Kalyankar', 'ashu989052@gmail.com', 'Ashu@123', '9890525854'),
 (11, 'ashutosh', 'ashutoshkalyankar06@gmail.com', 'Ashu@123', '9420447538'),
-(12, 'shraddha', 'ashutoshalyankar09@gmail.com', 'Ashu@123', '9309530158');
+(12, 'shraddha', 'ashutoshalyankar09@gmail.com', 'Ashu@123', '9309530158'),
+(13, 'Jibraeel Shaikh', 'devilcloset007@gmail.com', 'Shaikh@12', '7517296433');
 
 --
 -- Indexes for dumped tables
@@ -181,19 +186,19 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
